@@ -14,6 +14,7 @@ RUN apt-get install -y vim
 
 RUN curl -O https://downloads.apache.org/kafka/3.4.0/kafka_2.13-3.4.0.tgz
 RUN tar -xzf kafka_2.13-3.4.0.tgz
+RUN cd kafka_2.13-3.4.0/libs && curl -LO https://github.com/aws/aws-msk-iam-auth/releases/download/v1.1.6/aws-msk-iam-auth-1.1.6-all.jar
 
 ENV KAFKA_BIN=/app/kafka_2.13-3.4.0/bin
 
