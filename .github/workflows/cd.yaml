@@ -23,4 +23,4 @@ jobs:
       - name: publish
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_ACCESS_TOKEN
-          docker publish $DOCKER_USERNAME/mybox
+          docker push $DOCKER_USERNAME/mybox
