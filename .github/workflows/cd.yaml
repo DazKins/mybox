@@ -1,0 +1,25 @@
+name: cd
+
+on:
+  push:
+    branches: [master]
+
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_ACCESS_TOKEN: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull code
+        uses: actions/checkout@v3
+
+      - name: build
+        run: |
+          docker build --platform linux/amd64 . -t $DOCKER_USERNAME/mybox
+
+      - name: publish
+        run: |
+          docker publish $DOCKER_USERNAME/mybox
