@@ -11,6 +11,7 @@ RUN apt-get install -y adduser
 RUN apt-get install -y kafkacat
 RUN apt-get install -y curl
 RUN apt-get install -y vim
+RUN apt-get install -y telnet
 
 RUN curl -O https://downloads.apache.org/kafka/3.4.0/kafka_2.13-3.4.0.tgz
 RUN tar -xzf kafka_2.13-3.4.0.tgz
